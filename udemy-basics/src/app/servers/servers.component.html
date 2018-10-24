@@ -1,3 +1,24 @@
 <p>
-  servers works!
+  <!-- string interpolation -->
+  {{ 'Message: ' + message}}
+
+  <!-- property binding: binding the 'disabled' property of the button DOM element to 'addDisabled' of our component -->
+  <button class="btn btn-primary" [disabled]="addDisabled">Blah</button>
+
+<p>
+  <label>Server Name</label>
+
+  <!-- event binding -->
+  <input type="search" class="form-control" (input)="onUpdateServerName($event)">
+
+  <!-- two-way binding -->
+  <input type="search" class="form-control" [(ngModel)]="serverName">
+
+
+
+  <button class="btn btn-primary" (click)="onAddButtonClick()" (mouseover)="onMouseOver()">Add Server</button>
+
+<p>
+  <label>{{this.serverName}}</label>
+
 </p>
