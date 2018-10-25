@@ -11,6 +11,7 @@ export class ServersComponent {
   addDisabled = true
   serverName
   serverWasCreated = false;
+  createdServers = ["test", "prod"]
 
   constructor() {
     setTimeout(() => this.addDisabled = false, 2000)
@@ -24,6 +25,7 @@ export class ServersComponent {
     this.addDisabled = true
     this.serverWasCreated = true
     console.log("Add button was clicked")
+    this.createdServers.push(this.serverName)
   }
 
   onMouseOver() {
@@ -33,5 +35,9 @@ export class ServersComponent {
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value
     console.log(this.serverName)
+  }
+
+  getColour() {
+    return this.serverWasCreated ? 'green' : 'red'
   }
 }
