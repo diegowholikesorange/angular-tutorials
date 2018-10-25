@@ -10,6 +10,7 @@ export class ServersComponent {
   message = "Server is up"
   addDisabled = true
   serverName
+  serverWasCreated = false;
 
   constructor() {
     setTimeout(() => this.addDisabled = false, 2000)
@@ -21,8 +22,8 @@ export class ServersComponent {
 
   onAddButtonClick() {
     this.addDisabled = true
+    this.serverWasCreated = true
     console.log("Add button was clicked")
-    console.log()
   }
 
   onMouseOver() {

@@ -14,11 +14,12 @@
   <!-- two-way binding -->
   <input type="search" class="form-control" [(ngModel)]="serverName">
 
-
-
   <button class="btn btn-primary" (click)="onAddButtonClick()" (mouseover)="onMouseOver()">Add Server</button>
 
 <p>
-  <label>{{this.serverName}}</label>
+  <!-- ngif and else -->
+  <label *ngIf="serverWasCreated; else myElseBlock" >{{this.serverName}}</label>
+  <ng-template #myElseBlock>
+    <label>Create server by clicking above</label>
+  </ng-template>
 
-</p>
