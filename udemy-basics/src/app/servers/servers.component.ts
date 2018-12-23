@@ -7,14 +7,14 @@ import {Component} from '@angular/core';
 })
 export class ServersComponent {
 
-  message = "Server is up"
-  addDisabled = true
-  serverName
+  message = 'Server is up';
+  addDisabled = true;
+  serverName;
   serverWasCreated = false;
-  createdServers = ["test", "prod"]
+  createdServers = ['test', 'prod'];
 
   constructor() {
-    setTimeout(() => this.addDisabled = false, 2000)
+    setTimeout(() => this.addDisabled = false, 2000);
   }
 
   getTime() {
@@ -22,22 +22,22 @@ export class ServersComponent {
   }
 
   onAddButtonClick() {
-    this.addDisabled = true
-    this.serverWasCreated = true
-    console.log("Add button was clicked")
-    this.createdServers.push(this.serverName)
+    this.addDisabled = true;
+    this.serverWasCreated = true;
+    console.log('Add button was clicked');
+    this.createdServers.push(this.serverName);
   }
 
   onMouseOver() {
-    console.log("Button under mouse")
+    console.log('Button under mouse');
   }
 
   onUpdateServerName(event: Event) {
-    this.serverName = (<HTMLInputElement>event.target).value
-    console.log(this.serverName)
+    this.serverName = (<HTMLInputElement>event.target).value;
+    console.log(this.serverName);
   }
 
   getColour() {
-    return this.serverWasCreated ? 'green' : 'red'
+    return this.serverWasCreated ? 'green' : 'red';
   }
 }
